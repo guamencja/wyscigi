@@ -1,0 +1,53 @@
+body {
+    background-color: rgb(30,30,30);
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+    user-select: none;
+}
+button {
+    padding: 5px 5px;
+    border: none;
+    background: rgb(31, 31, 194);
+    color: white;
+    cursor: pointer;
+    outline: none;
+    font-family: sans-serif;
+    border-radius: 5px;
+}
+#join_prompt {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#game {
+    position: absolute;
+    top: 50%;
+    width: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+input[type="text"] {
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    border-bottom: 1px solid white;
+    margin-bottom: 10px;
+}
+#game-chat {
+    margin-top: 30px;
+    text-align: left;
+    height: 130px;
+    overflow: hidden;
+}
+#rails {
+    text-align: left;
+}
+#rails #rail {
+    display: flex;
+}
+#playername {
+    margin-right: 40px;
+}

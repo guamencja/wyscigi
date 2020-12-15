@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>wyścigi pociągów</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="join_prompt">
+            <h1>wyścigi pociągów</h1>
+            <input type="text" autocomplete="off" id="name_prompt" placeholder="nazwa"></input><br>
+            <input type="text" autocomplete="off" id="gameid_prompt" placeholder="id gry"></input><br>
+            <button onclick="gameJoin();">dołącz do gry</button>
+            <button onclick="gameCreate();">stwórz grę</button>
+        </div>
+        <div id="game" style="display: none;">
+            <div id="rails"></div>
+            <h3 id="game-chat"></h3>
+            <div id="host-panel" style="display: none;">
+                <button onclick="hoststart();">start</button>
+            </div>
+            <p style="user-select:text;">...</p>
+        </div>
+        <script src="main.js"></script>
+    </body>
+</html>
