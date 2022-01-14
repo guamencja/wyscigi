@@ -1,2 +1,4 @@
-# wyscigipociagow
-made by troll, ale trollowi sie nie chce tworzyc repo
+# wyscigi
+made by troll, ale dodaje swoje drobnostki
+
+[Pierwotna wersja](https://github.com/lisqu16/wyscigi/tree/old)
