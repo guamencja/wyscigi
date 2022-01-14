@@ -160,7 +160,7 @@ const server = new ws.Server({
 
 
                     // no dobra, ale czy jest więcej niż 2 graczy?
-                    if(room.players.length >= 1) {
+                    if(room.players.length >= 2) {
                         // jeszcze jak
                         rooms[socket["roomid"]].started = true;
                         room.players.forEach(s => s.send(JSON.stringify({
