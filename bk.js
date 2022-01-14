@@ -1,4 +1,4 @@
-const { execSync } = require("child_process");
+﻿const { execSync } = require("child_process");
 const express = require("express");
 const ws = require("ws");
 
@@ -160,7 +160,7 @@ const server = new ws.Server({
 
 
                     // no dobra, ale czy jest więcej niż 2 graczy?
-                    if(room.players.length >= 2) {
+                    if(room.players.length >= 1) {
                         // jeszcze jak
                         rooms[socket["roomid"]].started = true;
                         room.players.forEach(s => s.send(JSON.stringify({
@@ -173,7 +173,7 @@ const server = new ws.Server({
                         // sama gra
 
 
-                        let p = ["Paliwa nalałeś na 2cm ruchu", "Powerbank wybychł", "Pociąg zapadł w depresję", "Pociąg został planetą", "pociąg nie lubił właściciela", "TheTroll zjadł koła pociągu", "pzpl zjadł ci pociąg", "liseu zjadł wagony", "Pieseł zjadł silnik"];
+                        let p = ["Paliwa nalałeś na 2cm ruchu", "Powerbank wybychł", "Pociąg zapadł w depresję", "Pociąg został planetą", "pociąg nie lubił właściciela", "TheTroll zjadł koła pociągu", "pzpl zjadł ci pociąg", "liseu zjadł wagony", "Pieseł zjadł silnik","kukanq zjadł bo myślał że to drwal"];
 
 
                         
