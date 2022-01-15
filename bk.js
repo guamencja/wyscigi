@@ -65,7 +65,7 @@ app.get('/api/join_room', (req,res) => {
 app.get('/api/create_room', (req,res) => {
     let roomName = randomCharset();
 
-    if(roomExists(roomName) == true) {
+    if(roomExists(roomName)) {
         roomName = randomCharset();
     }
     
@@ -113,7 +113,7 @@ const server = new ws.Server({
 
 
                 // czy gra w pokoju już się zaczęła?
-                if(rooms[id].started !== true) {
+                if(!rooms[id].started) {
 
                     // nie
                     let room = rooms[id];
@@ -155,7 +155,7 @@ const server = new ws.Server({
                 let room = rooms[socket["roomid"]];
 
                 // czy ten gość jest faktycznie hostem????
-                if(socket["name"] == room.host["name"] || room.started == true) {
+                if(socket["name"] == room.host["name"] || !room.started) {
                     // jest!
 
 

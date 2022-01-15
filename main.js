@@ -17,7 +17,7 @@ function gameJoin() {
     s("#join_prompt").style.display = "none";
     fetch("/api/join_room?room=" + s("#gameid_prompt").value).then(r => {
         r.json().then(j => {
-            if(j.ok == true) {
+            if(j.ok) {
                 game();
             } else {
                 s("#join_prompt").style.display = "block";
@@ -43,7 +43,7 @@ function game() {
     let name = s("#name_prompt").value;
     let id = s("#gameid_prompt").value;
 
-    so = new WebSocket('ws://'+ location.hostname +':171');
+    so = new WebSocket('ws://'+ location.hostname +':2137');
     so.addEventListener("open", () => {
         // mamy połączenie z webskarpetką, gg
         // wysyłamy tzw. "hello" - podstawowe informacje o graczu
@@ -59,7 +59,7 @@ function game() {
     })
     so.addEventListener("message", function(m) {
         let msg = JSON.parse(m.data);
-        if(devMode == true) {
+        if(devMode) {
             console.log(msg);
         }
 
@@ -89,7 +89,7 @@ function game() {
                 break;
             case "roomStarted":
                 // gra się zaczyna
-                if(msg.value == true) {
+                if(msg.value) {
                     s("#game-chat").innerHTML += "host zaczyna grę.<br>";
                     s("#game-chat").scrollTo(0, s("#game-chat").scrollHeight);
                     s("#host-panel").style.display = "none";
