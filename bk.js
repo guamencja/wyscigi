@@ -51,7 +51,7 @@ app.get('/api/join_room', (req,res) => {
     let ok = true;
     let message = "";
 
-    if(roomExists(roomName) == false) {
+    if(!roomExists(roomName)) {
         ok = false;
         message = "pokój o takiej nazwie nie istnieje"
     }
@@ -210,7 +210,7 @@ const server = new ws.Server({
                             room.players.forEach(player => {
 
 
-                                if(room.playerLost[player["name"]] == false) {
+                                if(!room.playerLost[player["name"]]) {
                                     // jedziemy dalej
                                     if(Math.floor(Math.random() * 100) <= driveChance) {
                                         room.playerPositions[player["name"]] += 1;
@@ -232,7 +232,7 @@ const server = new ws.Server({
                                             a.push(room.playerLost[i])
                                         };
 
-                                        if(a.includes(false) == false) {
+                                        if(!a.includes(false)) {
                                             // a jednak
                                             room.players.forEach(s => s.send(JSON.stringify({
                                                 "type": "roomChat",
