@@ -155,7 +155,7 @@ const server = new ws.Server({
                 let room = rooms[socket["roomid"]];
 
                 // czy ten gość jest faktycznie hostem????
-                if(socket["name"] == room.host["name"] || !room.started) {
+                if(socket["name"] == room.host["name"] || room.started) {
                     // jest!
 
 

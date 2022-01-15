@@ -43,7 +43,7 @@ function game() {
     let name = s("#name_prompt").value;
     let id = s("#gameid_prompt").value;
 
-    so = new WebSocket('ws://'+ location.hostname +':2137');
+    so = new WebSocket('ws://'+ location.hostname +':171');
     so.addEventListener("open", () => {
         // mamy połączenie z webskarpetką, gg
         // wysyłamy tzw. "hello" - podstawowe informacje o graczu
