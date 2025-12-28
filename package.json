@@ -1,0 +1,16 @@
+{
+  "name": "unfair-monopoly",
+  "version": "16.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "guam",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.2.1",
+    "picocolors": "^1.1.1",
+    "ws": "^8.18.3"
+  }
+}
