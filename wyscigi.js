@@ -2,8 +2,10 @@ const reasons = ["Paliwa nalałeś na 2cm ruchu", "Powerbank wybychł", "Pociąg
 
 class Wyscigi {
     constructor(room, logger) {
+        /** @type {Room} */
         this.room = room;
 
+        /** @private */
         this.log = logger;
 
         // wyscigi pociagow variables
@@ -36,6 +38,9 @@ class Wyscigi {
     }
 
     // when a new spectator joins
+    /**
+     * @param {Player} player
+     */
     sendGameState(player) {
         // send the game state to the spectator
         player.send("playerTrains", this.playerTrains);

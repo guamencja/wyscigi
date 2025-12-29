@@ -3,14 +3,21 @@ class Player {
     nickname;
 
     constructor(socket, logger) {
-        this.socket = socket; // todo: make it private bcs i dont remember how to do it in js
-
+        /** @private */
+        this.socket = socket;
+        /** @private */
         this.log = logger;
 
         // init player logic
+        /** @type {Room} */
         this.room = null;
     }
 
+    /**
+     * Sends data to the player.
+     * @param {string} type
+     * @param {*} value
+     */
     send(type, value) {
         this.socket.send(JSON.stringify({
             "type": type,
@@ -18,6 +25,10 @@ class Player {
         }))
     }
 
+    /**
+     * Sends an alert message.
+     * @param {string} msg
+     */
     alertMessage(msg) {
         this.send("alertMessage", msg);
     }
